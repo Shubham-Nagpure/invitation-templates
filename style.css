@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@100&family=Quicksand:wght@300;700&family=Roboto:wght@400;700&family=Sacramento&family=Zeyada&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fefefe;
+}
+
+section {
+  height: 93vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Main page decoration */
+section .top-left-decoration,
+section .top-right-decoration,
+section .bottom-right-decoration,
+section .bottom-left-decoration {
+  position: absolute;
+  width: 52%;
+}
+
+section .top-left-decoration {
+  top: 0;
+  left: 0;
+}
+section .top-right-decoration {
+  top: 0;
+  right: 0;
+}
+section .bottom-right-decoration {
+  bottom: 0;
+  right: 0;
+}
+section .bottom-left-decoration {
+  bottom: 0;
+  left: 0;
+}
+
+.ganpati-logo {
+  position: absolute;
+  top: 50;
+  mix-blend-mode: multiply;
+  width: 40%;
+}
+
+.main-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content,
+.date,
+.location,
+.content-title,
+.content-title-member,
+.creator {
+  font-family: "Quicksand", sans-serif;
+}
+
+.content {
+  width: 90vw;
+  font-size: 14px;
+  color: rgb(128, 94, 22);
+  word-wrap: break-word;
+}
+
+.date {
+  position: absolute;
+  width: 40vw;
+  font-size: 12px;
+  color: rgb(128, 94, 22);
+  word-wrap: break-word;
+  margin-bottom: -250;
+}
+
+.location {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  margin-bottom: 75px;
+  width: 63vw;
+  font-size: 14px;
+}
+
+.date {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.content-title {
+  font-weight: 600;
+  font-size: 30px;
+  color: rgb(128, 94, 22);
+}
+
+.content-title-member {
+  font-weight: 600;
+  font-size: 22px;
+  color: rgb(128, 94, 22);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(128, 94, 22);
+}
+
+.location-icon {
+  margin: 0;
+  margin-right: 25px;
+  display: contents !important;
+}
+
+.location-information {
+  font-size: 8px;
+  color: rgb(71, 24, 2);
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: rgb(71, 24, 2);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+/* To blink the location */
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.creator {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 8px;
+  white-space: pre-line;
+  margin-bottom: 25px;
+}
+
+.width-75 {
+  width: 75%;
+}
+
+.creator-link {
+  color: brown;
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    height: 100vh;
+    width: 40%;
+  }
+
+  section .top-left-decoration,
+  section .top-right-decoration,
+  section .bottom-right-decoration,
+  section .bottom-left-decoration {
+    width: 40%;
+  }
+
+  .date {
+    font-size: 22px;
+  }
+
+  .content-title {
+    font-size: 34px;
+  }
+
+  .content-title-member {
+    font-size: 34px;
+  }
+
+  .location {
+    font-size: 18px;
+    width: 22vw;
+    word-wrap: break-word;
+    margin-bottom: 90px;
+  }
+
+  .content {
+    width: 25vw;
+    font-size: 18px;
+    color: rgb(128, 94, 22);
+    word-wrap: break-word;
+  }
+
+  .date {
+    position: absolute;
+    width: 15vw;
+    font-size: 18px;
+    color: rgb(128, 94, 22);
+    word-wrap: break-word;
+    margin-bottom: -300;
+  }
+
+  .creator {
+    position: absolute;
+    bottom: 0;
+    left: unset;
+    font-size: 10px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    white-space: unset;
+  }
+}
