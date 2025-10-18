@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Griha Pravesh Invitaion</title>
+    <title>Sayali And Raj Wedding Invitation</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./petal.css" />
     <link
@@ -13,32 +13,61 @@
   <body>
     <div class="sakura-falling"></div>
     <section>
-      <img src="./images/leftHar.png" class="top-left-decoration width-75" />
-      <img src="./images/rightHar.png" class="top-right-decoration" />
-      <img src="./images/leftKalashs.png" class="bottom-left-decoration" />
-      <img src="./images/rightKalash.png" class="bottom-right-decoration" />
+      <img src="./images/center.png" class="top-left-decoration" />
+      <img src="./images/center.png" class="top-right-decoration" />
+      <img src="./images/center.png" class="center-bottom-decoration" />
+      <img
+        src="./images/latern.png"
+        class="latern-first-decoration pendulum-slow"
+      />
+      <img
+        src="./images/latern.png"
+        class="latern-last-decoration pendulum-swing"
+      />
+      <img
+        src="./images/latern2.png"
+        class="latern-second-last-decoration pendulum-fast"
+      />
+      <img
+        src="./images/latern2.png"
+        class="latern-second-first-decoration pendulum-slow"
+      />
+
+      <img src="./images/bt.png" class="bottom-right-decoration" />
+      <img src="./images/bt.png" class="bottom-left-decoration" />
+      <img src="./images/bt.png" class="bottom-center-decoration" />
+      <img src="./images/bt.png" class="bottom-center-first-decoration" />
+
+      <img
+        src="./images/bt.png"
+        class="flip-horizontal bottom-last-decoration"
+      />
+      <img
+        src="./images/bt.png"
+        class="flip-horizontal bottom-last-first-decoration"
+      />
       <div class="main-container">
-        <img src="./images/ganpati.avif" class="ganpati-logo" />
-        <p class="content-title-member">Mr & Mrs Ramdas Nagpure</p>
-        <br />
-        <p class="content">
-          Cordially invite you and your family to attend the auspicious occasion
-          of
+        <img src="./images/bng.png" class="bride-groom" />
+        <p class="wedding-invitation-text">
+          You are cordially invited to the wedding of
         </p>
+        <div class="couple-names">
+          <p class="bride bride-groom-text">Sayali</p>
+          <p class="bride-groom-text-separator">&</p>
+          <p class="groom bride-groom-text">Raj</p>
+        </div>
         <br />
-        <p class="content-title">GRIHA PRAVESH</p>
-        <br />
-        <p class="date">Monday, 19th February 10:00 AM</p>
-        <div class="location">
-          <p class="subtitle"><b>-: Venue :-</b></p>
-          <a href="https://maps.app.goo.gl/Gh8fnoKXmLPA9FNG7">
-            <i
-              class="fa fa-map-marker location-icon blink"
-              aria-hidden="true"
-            ></i>
-            Plot no. 123, last bus-stop, Vaishanavnagar, Kedgaon, Ahmednagar
+
+        <div class="event-details">
+          <p class="event-date">on Saturday, 27th November 2025</p>
+          <p class="event-time">at &nbsp;1:07 pm</p>
+          <a
+            href="https://maps.app.goo.gl/Gh8fnoKXmLPA9FNG7"
+            class="venue-address"
+          >
+            <i class="fa fa-map-marker blink" aria-hidden="true"></i>
+            Radhakrishna Mandir Hall, Dapoli
           </a>
-          <div class="location-information blink">click on location</div>
         </div>
       </div>
       <div class="creator">
@@ -51,6 +80,45 @@
       </div>
     </section>
 
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
+      <source src="./bgmusic.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Background Music Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("bgMusic");
+        let hasStartedPlaying = false;
+
+        function startMusic() {
+          if (!hasStartedPlaying) {
+            audio
+              .play()
+              .then(() => (hasStartedPlaying = true))
+              .catch(() => {}); // Silent fail
+          }
+        }
+
+        // Try autoplay first
+        audio
+          .play()
+          .then(() => (hasStartedPlaying = true))
+          .catch(() => {
+            // Start on user interaction if autoplay fails
+            document.addEventListener("click", startMusic, { once: true });
+            document.addEventListener("keydown", startMusic, { once: true });
+            document.addEventListener("touchstart", startMusic, { once: true });
+            document.addEventListener("mousemove", startMusic, { once: true });
+          });
+
+        // Handle audio loop
+        audio.addEventListener("ended", () => {
+          audio.currentTime = 0;
+          audio.play();
+        });
+      });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
     <script src="/path/to/flickity.pkgd.min.js"></script>

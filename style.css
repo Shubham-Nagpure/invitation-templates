@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@100&family=Quicksand:wght@300;700&family=Roboto:wght@400;700&family=Sacramento&family=Zeyada&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@100&family=Quicksand:wght@300;700&family=Roboto:wght@400;700&family=Sacramento&family=Zeyada&family=Rancho&display=swap");
 
 * {
   margin: 0;
@@ -11,50 +11,190 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fefefe;
+  background-image: radial-gradient(
+    circle,
+    #fffdfa,
+    #fffbf7,
+    #fff8f4,
+    #fff6f2,
+    #fff3f0,
+    #fff2ef,
+    #fff1ee,
+    #fff0ed,
+    #fff1eb,
+    #fff2e9,
+    #fff4e8,
+    #fff6e7
+  );
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  background-image: url("./images/bg1.jpg");
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: -1;
+  mask: linear-gradient(
+      to right,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+  mask-composite: intersect;
+  -webkit-mask: linear-gradient(
+      to right,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+  -webkit-mask-composite: source-in;
+}
+
+/* Main Container */
 section {
-  height: 93vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  overflow: hidden;
 }
 
-/* Main page decoration */
+/* Decorative Images */
 section .top-left-decoration,
-section .top-right-decoration,
-section .bottom-right-decoration,
-section .bottom-left-decoration {
+section .top-right-decoration {
   position: absolute;
+  top: 0;
   width: 52%;
 }
 
 section .top-left-decoration {
-  top: 0;
-  left: 0;
+  left: 30px;
 }
 section .top-right-decoration {
-  top: 0;
-  right: 0;
+  right: 30px;
 }
-section .bottom-right-decoration {
-  bottom: 0;
-  right: 0;
-}
-section .bottom-left-decoration {
-  bottom: 0;
-  left: 0;
+section .center-bottom-decoration {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
 }
 
-.ganpati-logo {
+section .bottom-right-decoration {
   position: absolute;
-  top: 50;
-  mix-blend-mode: multiply;
-  width: 40%;
+  bottom: 0;
+  right: 30px;
+  width: 20%;
+  transform: translateX(-50%);
+  rotate: -10deg;
+}
+section .bottom-left-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  width: 20%;
+  transform: translateX(50%);
+  rotate: 10deg;
+}
+section .bottom-center-decoration {
+  position: absolute;
+  bottom: -5;
+  right: 35%;
+  width: 10%;
+  transform: translateX(50%);
+  rotate: 10deg;
+}
+
+section .bottom-center-first-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 10%;
+  transform: translateX(50%);
+  rotate: 10deg;
+}
+
+section .bottom-last-decoration {
+  position: absolute;
+  bottom: -10px;
+  right: 25;
+  width: 10%;
+  transform: scaleX(-1);
+  rotate: 10deg;
+}
+
+section .bottom-last-first-decoration {
+  position: absolute;
+  bottom: -10px;
+  left: 25;
+  width: 10%;
+  rotate: -10deg;
+  transform: scaleX(-1);
+}
+
+/* Lantern Decorations */
+section .latern-first-decoration,
+section .latern-last-decoration,
+section .latern-second-last-decoration,
+section .latern-second-first-decoration {
+  position: absolute;
+  width: 5%;
+  z-index: -100;
+}
+
+section .latern-first-decoration {
+  top: 80px;
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+section .latern-last-decoration {
+  top: 50px;
+  right: 25%;
+  transform: translateX(-50%);
+}
+
+section .latern-second-last-decoration {
+  top: 50px;
+  right: 15%;
+  transform: translateX(-50%);
+}
+
+section .latern-second-first-decoration {
+  top: 30px;
+  left: 15%;
+  transform: translateX(-50%);
 }
 
 .main-container {
@@ -65,55 +205,8 @@ section .bottom-left-decoration {
   align-items: center;
 }
 
-.content,
-.date,
-.location,
-.content-title,
-.content-title-member,
-.creator {
-  font-family: "Quicksand", sans-serif;
-}
-
-.content {
-  width: 90vw;
-  font-size: 14px;
-  color: rgb(128, 94, 22);
-  word-wrap: break-word;
-}
-
-.date {
-  position: absolute;
-  width: 40vw;
-  font-size: 12px;
-  color: rgb(128, 94, 22);
-  word-wrap: break-word;
-  margin-bottom: -250;
-}
-
-.location {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  margin-bottom: 75px;
-  width: 63vw;
-  font-size: 14px;
-}
-
-.date {
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.content-title {
-  font-weight: 600;
-  font-size: 30px;
-  color: rgb(128, 94, 22);
-}
-
-.content-title-member {
-  font-weight: 600;
-  font-size: 22px;
-  color: rgb(128, 94, 22);
+.bride-groom-text-separator {
+  display: none;
 }
 
 a {
@@ -121,106 +214,369 @@ a {
   color: rgb(128, 94, 22);
 }
 
-.location-icon {
-  margin: 0;
-  margin-right: 25px;
-  display: contents !important;
-}
-
-.location-information {
-  font-size: 8px;
-  color: rgb(71, 24, 2);
-  font-weight: 600;
-}
-
-.subtitle {
-  font-size: 16px;
-  color: rgb(71, 24, 2);
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-/* To blink the location */
-.blink {
-  animation: blink-animation 1s steps(5, start) infinite;
-}
-
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
-
-.creator {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  font-size: 8px;
-  white-space: pre-line;
-  margin-bottom: 25px;
-}
-
-.width-75 {
-  width: 75%;
-}
-
 .creator-link {
   color: brown;
 }
 
-@media screen and (min-width: 1200px) {
-  section {
-    height: 100vh;
-    width: 40%;
+.venue-address:hover {
+  color: rgb(128, 63, 22);
+}
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+
+.flip-vertical {
+  transform: scaleY(-1);
+}
+
+.flip-both {
+  transform: scale(-1, -1);
+}
+
+.blink {
+  animation: blink-animation 4s ease-in-out infinite;
+}
+
+@keyframes blink-animation {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.5;
+  }
+}
+
+.swing {
+  animation: swing-animation 3s ease-in-out infinite;
+}
+
+.swing-slow {
+  animation: swing-animation 4s ease-in-out infinite;
+}
+
+.swing-fast {
+  animation: swing-animation 2s ease-in-out infinite;
+}
+
+@keyframes swing-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+.pendulum-swing {
+  transform-origin: top center;
+  animation: pendulum-animation 3s ease-in-out infinite;
+}
+
+.pendulum-slow {
+  transform-origin: top center;
+  animation: pendulum-animation 4s ease-in-out infinite;
+}
+
+.pendulum-fast {
+  transform-origin: top center;
+  animation: pendulum-animation 2s ease-in-out infinite;
+}
+
+@keyframes pendulum-animation {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+}
+
+.wedding-invitation-text {
+  font-family: "Rancho", cursive;
+  font-size: 24px;
+  color: rgba(176, 18, 18, 0.983);
+}
+
+.couple-names-text {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  body::before {
+    top: 10%;
+    left: 40%;
+    width: 30%;
+    height: 30%;
+    z-index: -9;
   }
 
-  section .top-left-decoration,
-  section .top-right-decoration,
-  section .bottom-right-decoration,
-  section .bottom-left-decoration {
-    width: 40%;
+  .bride-groom-text-separator {
+    display: block;
+    font-family: "Dancing Script", cursive;
+    font-size: 24px;
+    color: rgba(176, 18, 18, 0.983);
   }
 
-  .date {
-    font-size: 22px;
-  }
-
-  .content-title {
-    font-size: 34px;
-  }
-
-  .content-title-member {
-    font-size: 34px;
-  }
-
-  .location {
-    font-size: 18px;
-    width: 22vw;
-    word-wrap: break-word;
-    margin-bottom: 90px;
-  }
-
-  .content {
-    width: 25vw;
-    font-size: 18px;
-    color: rgb(128, 94, 22);
-    word-wrap: break-word;
-  }
-
-  .date {
+  section .bottom-last-first-decoration {
     position: absolute;
-    width: 15vw;
-    font-size: 18px;
-    color: rgb(128, 94, 22);
-    word-wrap: break-word;
-    margin-bottom: -300;
+    bottom: -10px;
+    left: 0;
+    width: 35%;
+    rotate: -10deg;
+  }
+
+  section .center-bottom-decoration {
+    display: none;
+  }
+
+  section .bottom-right-decoration {
+    display: none;
+  }
+  section .bottom-left-decoration {
+    display: none;
+  }
+  section .bottom-center-decoration {
+    position: absolute;
+    bottom: -5;
+    right: 31%;
+    width: 20%;
+    transform: translateX(50%);
+    rotate: 10deg;
+  }
+
+  section .bottom-center-first-decoration {
+    position: absolute;
+    bottom: -5;
+    left: 11%;
+    width: 20%;
+    transform: translateX(50%);
+    rotate: 10deg;
+  }
+
+  section .bottom-last-decoration {
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 35%;
+    /* transform: scaleX(-1); */
+    rotate: 8deg;
+  }
+
+  .main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-top: 30px;
+  }
+
+  section .latern-first-decoration {
+    top: 60px;
+  }
+
+  .wedding-invitation-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wedding-invitation-text {
+    width: 30%;
+  }
+
+  .couple-names-text {
+    display: block;
+  }
+
+  .couple-names {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Dancing Script", cursive;
+    gap: 10px;
+  }
+
+  .bride-groom-and-text {
+    display: block;
+    font-size: 40px;
+  }
+
+  .bride-groom {
+    mix-blend-mode: multiply;
+    width: 80%;
+  }
+
+  .bride-groom-text {
+    font-family: "Dancing Script", cursive;
+    font-weight: 700;
+    font-size: 40px;
+    color: rgba(176, 18, 18, 0.983);
+  }
+
+  .wedding-invitation-text {
+    position: relative;
+    width: 60%;
+    font-size: 20px;
+  }
+
+  .event-details {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    font-family: "Rancho", cursive;
+    color: rgba(176, 18, 18, 0.983);
+    gap: 5px;
+  }
+
+  .venue-address{
+    margin-top: 10px;
   }
 
   .creator {
+    width: 15%;
+    font-family: "Quicksand", sans-serif;
+    position: absolute;
+    bottom: -20;
+    text-align: center;
+    font-size: 7px;
+    margin-bottom: 25px;
+    align-items: center;
+    justify-items: center;
+    white-space: unset;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bride-groom {
+    position: absolute;
+    bottom: 100;
+    mix-blend-mode: multiply;
+    width: 60%;
+  }
+
+  .bride-groom {
+    position: absolute;
+    bottom: 100;
+    mix-blend-mode: multiply;
+    width: 60%;
+  }
+
+  .bride-groom-and-text {
+    display: none;
+  }
+
+  .bride-groom-text {
+    font-family: "Dancing Script", cursive;
+    font-weight: 700;
+    font-size: 60px;
+    color: rgba(176, 18, 18, 0.983);
+  }
+
+  .groom {
+    position: absolute;
+    top: 375px;
+    left: 200px;
+  }
+
+  .bride {
+    position: absolute;
+    top: 375px;
+    right: 140px;
+  }
+
+  section {
+    height: 100vh;
+    width: 60%;
+  }
+
+  section .top-left-decoration,
+  section .top-right-decoration {
+    width: 30%;
+  }
+
+  .creator {
+    font-size: 10px;
+  }
+
+  .event-details {
+    width: 60%;
+    max-width: 500px;
+  }
+
+  .event-date {
+    font-size: 28px;
+  }
+
+  .event-time {
+    font-size: 20px;
+  }
+
+  .venue-address {
+    font-size: 20px;
+  }
+
+  .wedding-invitation-text {
+    position: absolute;
+    top: 200;
+  }
+
+  .event-date {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .event-time {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .venue-address {
+    font-size: 24px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .event-details {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    font-family: "Rancho", cursive;
+    color: rgba(176, 18, 18, 0.983);
+  }
+  .creator {
+    font-family: "Quicksand", sans-serif;
     position: absolute;
     bottom: 0;
-    left: unset;
-    font-size: 10px;
     text-align: center;
+    font-size: 10px;
+    margin-bottom: 25px;
     align-items: center;
     justify-items: center;
     white-space: unset;
