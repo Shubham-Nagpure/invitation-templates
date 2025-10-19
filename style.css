@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --vh: 1vh;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -28,6 +32,7 @@ body {
   );
   position: relative;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
 }
 
@@ -80,6 +85,7 @@ body::before {
 /* Main Container */
 section {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -313,6 +319,22 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+
+  /* Better mobile viewport handling */
+  body {
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  section {
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
   body::before {
     top: 10%;
     left: 40%;
@@ -374,11 +396,13 @@ a {
   }
 
   .main-container {
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    margin-top: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+    min-height: calc(var(--vh, 1vh) * 100);
   }
 
   section .latern-first-decoration {
