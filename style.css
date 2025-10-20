@@ -458,7 +458,7 @@ a {
   }
 
   .event-details {
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -471,7 +471,7 @@ a {
   }
 
   .venue-address{
-    margin-top: 10px;
+    margin-top: 7px;
   }
 
   .creator {
