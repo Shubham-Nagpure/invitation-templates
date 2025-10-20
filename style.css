@@ -328,11 +328,13 @@ a {
   body {
     height: calc(var(--vh, 1vh) * 100);
     min-height: calc(var(--vh, 1vh) * 100);
+    overflow-y: auto;
   }
 
   section {
     height: calc(var(--vh, 1vh) * 100);
     min-height: calc(var(--vh, 1vh) * 100);
+    overflow-y: auto;
   }
 
   body::before {
@@ -401,8 +403,10 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
     min-height: calc(var(--vh, 1vh) * 100);
+    box-sizing: border-box;
+    overflow-y: auto;
   }
 
   section .latern-first-decoration {
@@ -414,77 +418,145 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
   }
 
   .wedding-invitation-text {
-    width: 30%;
-  }
-
-  .couple-names-text {
-    display: block;
+    width: 80%;
+    font-size: clamp(19px, 4.5vw, 23px);
+    text-align: center;
+    margin-bottom: 8px;
   }
 
   .couple-names {
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Dancing Script", cursive;
-    gap: 10px;
-  }
-
-  .bride-groom-and-text {
-    display: block;
-    font-size: 40px;
-  }
-
-  .bride-groom {
-    mix-blend-mode: multiply;
-    width: 80%;
+    gap: 4px;
   }
 
   .bride-groom-text {
     font-family: "Dancing Script", cursive;
     font-weight: 700;
-    font-size: 40px;
+    font-size: clamp(38px, 8vw, 48px);
     color: rgba(176, 18, 18, 0.983);
   }
 
-  .wedding-invitation-text {
-    position: relative;
-    width: 60%;
-    font-size: 20px;
+  .bride-groom-text-separator {
+    font-family: "Dancing Script", cursive;
+    font-size: clamp(21px, 5vw, 25px);
+    color: rgba(176, 18, 18, 0.983);
+  }
+
+  .bride-groom {
+    mix-blend-mode: multiply;
+    width: clamp(55%, 65vw, 75%);
+    margin: 8px 0;
   }
 
   .event-details {
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 90%;
     max-width: 400px;
     font-family: "Rancho", cursive;
     color: rgba(176, 18, 18, 0.983);
-    gap: 5px;
+    gap: 3px;
+    flex: 0 0 auto;
+    margin-bottom: 15px;
   }
 
-  .venue-address{
-    margin-top: 5px;
+  .event-date {
+    font-size: clamp(18px, 4vw, 22px);
+    text-align: center;
+  }
+
+  .event-time {
+    font-size: clamp(16px, 3.5vw, 20px);
+    text-align: center;
+  }
+
+  .venue-address {
+    font-size: clamp(16px, 3.5vw, 20px);
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 2px;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .creator {
     width: 15%;
     font-family: "Quicksand", sans-serif;
     position: absolute;
-    bottom: -20;
+    bottom: -20px;
     text-align: center;
-    font-size: 7px;
+    font-size: clamp(6px, 2vw, 7px);
     margin-bottom: 25px;
     align-items: center;
     justify-items: center;
     white-space: unset;
+  }
+
+  /* Extra small screens */
+  @media screen and (max-height: 600px) {
+    .main-container {
+      padding: 20px 0 10px 0;
+    }
+    
+    .wedding-invitation-text-container {
+      margin-top: 10px;
+    }
+    
+    .wedding-invitation-text {
+      font-size: clamp(15px, 3vw, 18px);
+      margin-bottom: 5px;
+    }
+    
+    .couple-names {
+      margin-top: 3px;
+      margin-bottom: 5px;
+      gap: 3px;
+    }
+    
+    .bride-groom-text {
+      font-size: clamp(25px, 6vw, 33px);
+    }
+    
+    .bride-groom-text-separator {
+      font-size: clamp(18px, 4vw, 22px);
+    }
+    
+    .bride-groom {
+      width: clamp(45%, 55vw, 65%);
+      margin: 5px 0;
+    }
+    
+    .event-details {
+      margin-top: 5px;
+      margin-bottom: 8px;
+      gap: 2px;
+    }
+    
+    .event-date {
+      font-size: clamp(15px, 3vw, 18px);
+    }
+    
+    .event-time {
+      font-size: clamp(13px, 2.5vw, 16px);
+    }
+    
+    .venue-address {
+      font-size: clamp(13px, 2.5vw, 16px);
+      margin-top: 2px;
+      line-height: 1.1;
+    }
   }
 }
 
@@ -599,7 +671,7 @@ a {
     position: absolute;
     bottom: 0;
     text-align: center;
-    font-size: 10px;
+    font-size: 8px;
     margin-bottom: 25px;
     align-items: center;
     justify-items: center;

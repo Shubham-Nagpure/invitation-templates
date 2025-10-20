@@ -91,6 +91,10 @@
       function setViewportHeight() {
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
+        
+        // Adjust content for very small screens
+        const isSmallScreen = window.innerHeight < 600;
+        document.documentElement.classList.toggle('small-screen', isSmallScreen);
       }
 
       // Set initial viewport height
