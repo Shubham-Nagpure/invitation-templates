@@ -1,7 +1,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
     <title>Sayali And Raj Wedding Invitation</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./petal.css" />
@@ -90,19 +93,22 @@
       // Set CSS custom property for viewport height
       function setViewportHeight() {
         const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-        
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+
         // Adjust content for very small screens
         const isSmallScreen = window.innerHeight < 600;
-        document.documentElement.classList.toggle('small-screen', isSmallScreen);
+        document.documentElement.classList.toggle(
+          "small-screen",
+          isSmallScreen
+        );
       }
 
       // Set initial viewport height
       setViewportHeight();
 
       // Update viewport height on resize and orientation change
-      window.addEventListener('resize', setViewportHeight);
-      window.addEventListener('orientationchange', () => {
+      window.addEventListener("resize", setViewportHeight);
+      window.addEventListener("orientationchange", () => {
         setTimeout(setViewportHeight, 100);
       });
 
@@ -112,15 +118,17 @@
 
         function startMusic() {
           if (!hasStartedPlaying) {
-            audio.play()
-              .then(() => hasStartedPlaying = true)
+            audio
+              .play()
+              .then(() => (hasStartedPlaying = true))
               .catch(() => {}); // Silent fail
           }
         }
 
         // Try autoplay first
-        audio.play()
-          .then(() => hasStartedPlaying = true)
+        audio
+          .play()
+          .then(() => (hasStartedPlaying = true))
           .catch(() => {
             // Start on user interaction if autoplay fails
             document.addEventListener("click", startMusic, { once: true });
@@ -136,5 +144,9 @@
         });
       });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
+    <script src="/path/to/flickity.pkgd.min.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
